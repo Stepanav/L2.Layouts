@@ -6,15 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:text="ывапвап"
+
+        />
+
     <TableRow>
 
-        <Button android:text="C" />
+        <Button
+            android:text="C"
+            android:textSize="24dp" />
 
-        <Button android:text="CE" />
+        <Button
+            android:text="CE"
+            android:textSize="24dp" />
 
-        <Button android:text="%" />
+        <Button
+            android:text="%"
+            android:textSize="24dp" />
 
-        <Button android:text="+/-" />
+        <Button
+            android:text="+/-"
+            android:textSize="24dp" />
 
     </TableRow>
 
@@ -55,20 +68,31 @@
 
     <TableRow>
 
-        <Button android:text="/" />
+        <Button
+            android:text="/"
+            android:textColor="@color/purple_200" />
 
-        <Button android:text="x" />
+        <Button
+            android:text="x"
+            android:textColor="@color/purple_200" />
 
-        <Button android:text="+" />
+        <Button
+            android:text="+"
+            android:textColor="@color/purple_200" />
 
-        <Button android:text="-" />
+        <Button
+            android:text="-"
+            android:textColor="@color/purple_200" />
     </TableRow>
 
     <TableRow>
 
         <Button
+            android:id="@+id/btnActTwo"
             android:layout_span="4"
-            android:text="=" />
+            android:text="="
+            android:textSize="28dp"
+            android:textStyle="bold" />
 
     </TableRow>
 
