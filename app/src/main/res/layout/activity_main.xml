@@ -1,143 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    android:padding="8dp">
+    <!-- поле результата -->
+    <TextView
+        android:id="@+id/resultField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/operationField"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- поле знака операции -->
+    <TextView
+        android:id="@+id/operationField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/resultField"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- поле ввода чисел -->
     <EditText
-        android:id="@+id/Screen"
-        android:text="ывапвап" />
+        android:id="@+id/numberField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultField" />
 
-    <TableRow>
-
-        <Button
-            android:id="@+id/Button_C"
-            android:text="C"
-            android:textSize="24dp" />
-
-        <Button
-            android:id="@+id/Button_CE"
-            android:text="CE"
-            android:textSize="24dp" />
-
-        <Button
-            android:id="@+id/Button_Percent"
-            android:text="%"
-            android:textSize="24dp" />
+    <LinearLayout
+        android:id="@+id/firstButtonPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberField">
 
         <Button
-            android:id="@+id/Button_Plus_Minus"
-            android:text="+/-"
-            android:textSize="24dp" />
-
-    </TableRow>
-
-    <TableRow>
-
-        <Button
-            android:id="@+id/Button_1"
-            android:text="1" />
-
-        <Button
-            android:id="@+id/Button_2"
-            android:text="2" />
-
-        <Button
-            android:id="@+id/Button_3"
-            android:text="3" />
-
-        <Button
-            android:id="@+id/Button_4"
-            android:text="4" />
-
-    </TableRow>
-
-    <TableRow>
-
-        <Button
-            android:id="@+id/Button_5"
-            android:text="5" />
-
-        <Button
-            android:id="@+id/Button_6"
-            android:text="6" />
-
-        <Button
-            android:id="@+id/Button_7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
             android:text="7" />
 
         <Button
-            android:id="@+id/Button_8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
             android:text="8" />
-    </TableRow>
-
-    <TableRow>
 
         <Button
-            android:id="@+id/Button_9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
             android:text="9" />
 
         <Button
-            android:id="@+id/Button_0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onOperationClick"
+            android:text="/" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondButtonPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstButtonPanel">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
+            android:text="4" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
+            android:text="5" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
+            android:text="6" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onOperationClick"
+            android:text="*" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thirdButtonPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondButtonPanel">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
+            android:text="1" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
+            android:text="2" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
+            android:text="3" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onOperationClick"
+            android:text="-" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/forthButtonPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirdButtonPanel">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
             android:text="0" />
 
         <Button
-            android:id="@+id/Button_00"
-            android:text="00" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
+            android:text="," />
 
         <Button
-            android:id="@+id/Button_."
-            android:text="." />
-
-    </TableRow>
-
-    <TableRow>
-
-        <Button
-            android:id="@+id/Button_dividing"
-            android:text="/"
-            android:textColor="@color/purple_200" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onOperationClick"
+            android:text="+" />
 
         <Button
-            android:id="@+id/Button_multiplying"
-            android:text="x"
-            android:textColor="@color/purple_200" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onOperationClick"
+            android:text="=" />
 
-        <Button
-            android:id="@+id/Button_increment"
-            android:text="+"
-            android:textColor="@color/purple_200" />
+    </LinearLayout>
 
-        <Button
-            android:id="@+id/Button_decrement"
-            android:text="-"
-            android:textColor="@color/purple_200" />
-    </TableRow>
-
-    <TableRow>
-
-        <Button
-            android:id="@+id/Button_summ"
-            android:layout_span="4"
-            android:text="="
-            android:textSize="28dp"
-            android:textStyle="bold" />
-
-    </TableRow>
-
-    <TableRow>
+    <LinearLayout
+        android:id="@+id/fifthButtonPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+       app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forthButtonPanel">
 
         <Button
             android:id="@+id/btnActTwo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_span="4"
-            android:text="run Second Activity"
-            android:textSize="28dp"
-            android:textStyle="bold" />
+            android:layout_weight="1"
+            android:text="Go to second activity" />
+    </LinearLayout>
 
-    </TableRow>
-
-</TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
