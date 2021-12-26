@@ -1,5 +1,6 @@
 package ru.gb.course1.l2layouts;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
@@ -17,30 +19,31 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     TextView operationField;    // текстовое поле для вывода знака операции
     Double operand = null;  // операнд операции
     String lastOperation = "="; // последняя операция
-    Button btnActTwo;
+    Button btnActTwo; // кнопка перехода во вторую activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // получаем все поля по id из activity_main.xml
         resultField = findViewById(R.id.resultField);
         numberField = findViewById(R.id.numberField);
         operationField = findViewById(R.id.operationField);
-
         btnActTwo = (Button) findViewById(R.id.btnActTwo);
         btnActTwo.setOnClickListener(this);
+
+        findViewById(R.id.btnActTwo).setOnClickListener(v -> {
+            Intent intent = SecondActivity.getIntentForLaunch(this, operand);
+            startActivity(intent);
+        });
+
     }
 
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnActTwo:
-                Intent intent = new Intent(this, SecondActivity.class);
-                startActivity(intent);
-                // TODO Call second activity
-                break;
-            default:
-                break;
+        if (v.getId() == R.id.btnActTwo) {
+            Intent intent = new Intent(this, SecondActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         Button button = (Button) view;
         String op = button.getText().toString();
         String number = numberField.getText().toString();
-        // если введенно что-нибудь
+        // если введенно число
         if (number.length() > 0) {
             number = number.replace(',', '.');
             try {
