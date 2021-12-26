@@ -7,25 +7,28 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:text="ывапвап"
-
-        />
+        android:id="@+id/Screen"
+        android:text="ывапвап" />
 
     <TableRow>
 
         <Button
+            android:id="@+id/Button_C"
             android:text="C"
             android:textSize="24dp" />
 
         <Button
+            android:id="@+id/Button_CE"
             android:text="CE"
             android:textSize="24dp" />
 
         <Button
+            android:id="@+id/Button_Percent"
             android:text="%"
             android:textSize="24dp" />
 
         <Button
+            android:id="@+id/Button_Plus_Minus"
             android:text="+/-"
             android:textSize="24dp" />
 
@@ -33,54 +36,82 @@
 
     <TableRow>
 
-        <Button android:text="1" />
+        <Button
+            android:id="@+id/Button_1"
+            android:text="1" />
 
-        <Button android:text="2" />
+        <Button
+            android:id="@+id/Button_2"
+            android:text="2" />
 
-        <Button android:text="3" />
+        <Button
+            android:id="@+id/Button_3"
+            android:text="3" />
 
-        <Button android:text="4" />
-
-    </TableRow>
-
-    <TableRow>
-
-        <Button android:text="5" />
-
-        <Button android:text="6" />
-
-        <Button android:text="7" />
-
-        <Button android:text="8" />
-    </TableRow>
-
-    <TableRow>
-
-        <Button android:text="9" />
-
-        <Button android:text="0" />
-
-        <Button android:text="00" />
-
-        <Button android:text="." />
+        <Button
+            android:id="@+id/Button_4"
+            android:text="4" />
 
     </TableRow>
 
     <TableRow>
 
         <Button
+            android:id="@+id/Button_5"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/Button_6"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/Button_7"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/Button_8"
+            android:text="8" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/Button_9"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/Button_0"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/Button_00"
+            android:text="00" />
+
+        <Button
+            android:id="@+id/Button_."
+            android:text="." />
+
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/Button_dividing"
             android:text="/"
             android:textColor="@color/purple_200" />
 
         <Button
+            android:id="@+id/Button_multiplying"
             android:text="x"
             android:textColor="@color/purple_200" />
 
         <Button
+            android:id="@+id/Button_increment"
             android:text="+"
             android:textColor="@color/purple_200" />
 
         <Button
+            android:id="@+id/Button_decrement"
             android:text="-"
             android:textColor="@color/purple_200" />
     </TableRow>
@@ -88,9 +119,22 @@
     <TableRow>
 
         <Button
-            android:id="@+id/btnActTwo"
+            android:id="@+id/Button_summ"
             android:layout_span="4"
             android:text="="
+            android:textSize="28dp"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btnActTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="4"
+            android:text="run Second Activity"
             android:textSize="28dp"
             android:textStyle="bold" />
 
