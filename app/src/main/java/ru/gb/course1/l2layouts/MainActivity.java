@@ -1,6 +1,5 @@
 package ru.gb.course1.l2layouts;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,7 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
@@ -34,8 +33,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         btnActTwo.setOnClickListener(this);
 
         findViewById(R.id.btnActTwo).setOnClickListener(v -> {
-            Intent intent = SecondActivity.getIntentForLaunch(this, operand);
+            Intent intent = new Intent(this, SecondActivity.class);
+            intent.putExtra(SecondActivity.calculationResultTextView, operand);
+            //return intent;
             startActivity(intent);
+
         });
 
     }
@@ -129,5 +131,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         }
         calculationResultTextView.setText(operand.toString().replace('.', ','));
         numberField.setText("");
+
     }
 }

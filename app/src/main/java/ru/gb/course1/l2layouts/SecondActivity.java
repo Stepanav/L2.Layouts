@@ -9,20 +9,18 @@ import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
     public static final String btnActTwo = "btnActTwo";
-    private TextView numberTextView;
+    public static String calculationResultTextView;
+    // private TextView numberTextView;
 
-    public static Intent getIntentForLaunch(Context context, Double number) {
-        Intent intent = new Intent(context, SecondActivity.class);
-        intent.putExtra(SecondActivity.btnActTwo, number);
-        return intent;
-    }
+    public TextView TextViewSecondActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        numberTextView = findViewById(R.id.number_text_view);
-        int number = getIntent().getExtras().getInt("btnActTwo");
-        numberTextView.setText(String.valueOf(number));
+        TextViewSecondActivity = findViewById(R.id.calculation_result_text_view);
+        // numberTextView = findViewById(R.id.text_view_second_activity);
+        //int number = getIntent().getExtras().getInt("btnActTwo");
+        //numberTextView.setText(String.valueOf(number));
     }
 }
