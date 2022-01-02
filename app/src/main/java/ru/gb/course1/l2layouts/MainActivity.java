@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-    TextView resultField; // текстовое поле для вывода результата
+    TextView calculationResultTextView; // текстовое поле для вывода результата
     EditText numberField;   // поле для ввода числа
     TextView operationField;    // текстовое поле для вывода знака операции
     Double operand = null;  // операнд операции
@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         setContentView(R.layout.activity_main);
 
         // получаем все поля по id из activity_main.xml
-        resultField = findViewById(R.id.resultField);
-        numberField = findViewById(R.id.numberField);
-        operationField = findViewById(R.id.operationField);
+        calculationResultTextView = findViewById(R.id.calculation_result_text_view);
+        numberField = findViewById(R.id.number_field);
+        operationField = findViewById(R.id.operation_field);
         btnActTwo = (Button) findViewById(R.id.btnActTwo);
         btnActTwo.setOnClickListener(this);
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         super.onRestoreInstanceState(savedInstanceState);
         lastOperation = savedInstanceState.getString("OPERATION");
         operand = savedInstanceState.getDouble("OPERAND");
-        resultField.setText(operand.toString());
+        calculationResultTextView.setText(operand.toString());
         operationField.setText(lastOperation);
     }
 
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     break;
             }
         }
-        resultField.setText(operand.toString().replace('.', ','));
+        calculationResultTextView.setText(operand.toString().replace('.', ','));
         numberField.setText("");
     }
 }

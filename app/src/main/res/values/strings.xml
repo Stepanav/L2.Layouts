@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">L2.Layouts</string>
+    <string name="label_second_activity">This is Second Activity</string>
 </resources>
