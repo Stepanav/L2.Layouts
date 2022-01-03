@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/number_field">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/clear_entry_button"
+            android:id="@+id/clear_last_symbol_button"
             android:layout_width="@dimen/button_width"
             android:layout_height="@dimen/button_height"
             android:layout_weight="@dimen/button_weight"

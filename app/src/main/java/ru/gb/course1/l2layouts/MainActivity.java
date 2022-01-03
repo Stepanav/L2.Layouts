@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     Button btnActTwo; // кнопка перехода во вторую activity
     Button dotButton; // кнопка (,)
     Button clearButton;//  кнопка (С) очистки
+    Button clearLastSymbolButton;// кнопка удаления оследнего введенного символа
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         btnActTwo.setOnClickListener(this);
         clearButton = (Button) findViewById(R.id.clear_button);
         clearButton.setOnClickListener(this);
+        clearLastSymbolButton = (Button) findViewById(R.id.clear_last_symbol_button);
+        clearLastSymbolButton.setOnClickListener(this);
 
         findViewById(R.id.btnActTwo).setOnClickListener(v -> {
             Intent intent = new Intent(this, SecondActivity.class);
@@ -47,10 +50,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     public void onClick(View v) {
-            if (v.getId() == R.id.clear_button) {
+        if (v.getId() == R.id.clear_button) {
             numberField.getText().clear();
             calculationResultTextView.setText("");
             operationField.setText("");
+        }
+        if (v.getId() == R.id.clear_last_symbol_button) {
+            String text = numberField.getText().toString();
+            numberField.setText(text.substring(0, text.length() - 1));
         }
     }
 
