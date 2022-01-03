@@ -19,18 +19,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     Double operand = null;  // операнд операции
     String lastOperation = "="; // последняя операция
     Button btnActTwo; // кнопка перехода во вторую activity
+    Button dotButton; // кнопка (,)
+    Button clearButton;//  кнопка (С) очистки
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //initViews();
         // получаем все поля по id из activity_main.xml
         calculationResultTextView = findViewById(R.id.calculation_result_text_view);
         numberField = findViewById(R.id.number_field);
         operationField = findViewById(R.id.operation_field);
         btnActTwo = (Button) findViewById(R.id.btnActTwo);
         btnActTwo.setOnClickListener(this);
+        clearButton = (Button) findViewById(R.id.clear_button);
+        clearButton.setOnClickListener(this);
 
         findViewById(R.id.btnActTwo).setOnClickListener(v -> {
             Intent intent = new Intent(this, SecondActivity.class);
@@ -43,9 +47,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     public void onClick(View v) {
-        if (v.getId() == R.id.btnActTwo) {
-            Intent intent = new Intent(this, SecondActivity.class);
-            startActivity(intent);
+            if (v.getId() == R.id.clear_button) {
+            numberField.getText().clear();
+            calculationResultTextView.setText("");
+            operationField.setText("");
         }
     }
 
@@ -131,6 +136,5 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         }
         calculationResultTextView.setText(operand.toString().replace('.', ','));
         numberField.setText("");
-
     }
 }

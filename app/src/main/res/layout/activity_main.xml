@@ -49,6 +49,7 @@
             android:layout_height="@dimen/button_height"
             android:layout_weight="@dimen/button_weight"
             android:text="CE"
+            app:backgroundTint="@color/purple_500"
             app:cornerRadius="@dimen/corner_Radius" />
 
         <com.google.android.material.button.MaterialButton
@@ -57,6 +58,7 @@
             android:layout_height="@dimen/button_height"
             android:layout_weight="@dimen/button_weight"
             android:text="C"
+            app:backgroundTint="@color/purple_500"
             app:cornerRadius="@dimen/corner_Radius" />
 
         <com.google.android.material.button.MaterialButton
@@ -65,6 +67,7 @@
             android:layout_height="@dimen/button_height"
             android:layout_weight="@dimen/button_weight"
             android:text="+/-"
+            app:backgroundTint="@color/purple_500"
             app:cornerRadius="@dimen/corner_Radius" />
 
     </LinearLayout>
@@ -226,13 +229,14 @@
             app:cornerRadius="@dimen/corner_Radius" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/dot_button"
             android:layout_width="@dimen/button_width"
             android:layout_height="@dimen/button_height"
             android:layout_weight="@dimen/button_weight"
             android:onClick="onNumberClick"
             android:text=","
             app:backgroundTint="@color/teal_200"
-            app:cornerRadius="@dimen/corner_Radius"/>
+            app:cornerRadius="@dimen/corner_Radius" />
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="@dimen/button_width"
@@ -241,7 +245,7 @@
             android:onClick="onOperationClick"
             android:text="="
             app:backgroundTint="@color/red"
-            app:cornerRadius="@dimen/corner_Radius"/>
+            app:cornerRadius="@dimen/corner_Radius" />
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="@dimen/button_width"
@@ -250,7 +254,7 @@
             android:onClick="onOperationClick"
             android:text="+"
             app:backgroundTint="@color/red"
-            app:cornerRadius="@dimen/corner_Radius"/>
+            app:cornerRadius="@dimen/corner_Radius" />
 
     </LinearLayout>
 
@@ -270,7 +274,7 @@
             android:layout_weight="@dimen/button_weight"
             android:text="Go to second activity"
             app:backgroundTint="@color/teal_700"
-            app:cornerRadius="@dimen/corner_Radius"/>
+            app:cornerRadius="@dimen/corner_Radius" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
